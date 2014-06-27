@@ -1,0 +1,101 @@
+﻿@model PagedList.IPagedList <MvcShaadi.Models.Profile>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+table td {
+    border:none;
+}
+table.lines td
+{
+    border-bottom:1px dotted #ccc ;
+}
+.profile
+{
+    width: 680px;
+float: left;
+height: auto;
+   
+}
+.Profileheader
+{
+    color:White;
+    padding:10px 0 0px 20px;
+    height:25px;
+    background-repeat:repeat-x;
+    background-image:url("content/theme1/images/darkgreybg.gif");
+}
+.profile-content
+{
+width: 679px;
+float: left;
+height: auto;
+background: #f8fef7;
+border: 1px solid #038501;
+}
+</style>
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+@foreach (var s in ViewBag.States )
+{
+ <p>@Html.ActionLink(linkText: (string)s.Name, actionName: "Index",routeValues: new { stateid = (int)s.StateId })</p> 
+}
+
+
+@foreach (var item in Model)
+{
+  <div class="profile" >
+       <div  class="Profileheader" ><strong> @Html.DisplayFor(modelItem => item.Name) </strong></div>
+      <div class="profile-content">
+          
+       <div style="width:167px;height:195px;float:left;margin:10px 10px 10px 10px;"><img src="@Url.Content("~/content/profileimage/" + item.ImageURL)" width="165px" height="193px" /></div>
+      <div  style="width:465px;height:auto; float:left;margin:10px 10px 10px 10px;"> 
+       <table class="lines" >
+      
+       <tr>
+            <td>@Html.LabelFor(modelItem => item.Dob) </td>
+            <td>@Html.DisplayFor(modelItem => item.Dob) </td>
+      </tr>
+      <tr>
+            <td>@Html.LabelFor(modelItem => item.MaritalStatus.Name) </td>
+            <td>@Html.DisplayFor(modelItem => item.MaritalStatus.Name) </td>
+        </tr>
+         <tr>
+            <td>@Html.LabelFor(modelItem => item.State.Name) </td>
+            <td>@Html.DisplayFor(modelItem => item.State.Name)</td>
+       </tr>
+       
+     
+        <tr>
+            
+            <td colspan="2">@Html.ActionLink("View full profile", "Details", new { id = item.ProfileId }) </td>
+
+        </tr>
+      </table>
+     
+      </div><!-- 1 -->
+      <div style="clear:both">
+       <table>
+         <tr>
+            <td>@Html.LabelFor(modelItem => item.Description) <br />
+            @Html.DisplayFor(modelItem => item.Description)<br />
+              @Html.ActionLink("Edit", "Edit", new { id = item.ProfileId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ProfileId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ProfileId })
+            </td>
+        </tr>
+      </table>
+      </div>
+      </div><!-- content -->
+      </div><!-- profile -->
+    <div style="width:680px; float:left; height:35px;"></div>
+    
+   
+}
+
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

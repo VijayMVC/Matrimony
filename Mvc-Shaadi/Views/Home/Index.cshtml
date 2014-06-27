@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model IEnumerable<MvcShaadi.Models.Religion>
+
+<h2>@ViewBag.Message</h2>
+<p>
+    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+</p>
+
+@foreach (var item in Model)
+{
+    <p>@Html.ActionLink(item.Name, "Browse", new { id = item.ReligionId })   </p>
+
+}

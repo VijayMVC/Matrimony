@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MvcShaadi.Models.Profile>
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            ReligionId
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Dob
+        </th>
+        <th>
+            MaritalStatusId
+        </th>
+        <th>
+            StateId
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            DegreeId
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReligionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaritalStatusId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DegreeId)
+        </td>
+        <td>
+           @* @Html.ActionLink("Edit", "Edit", new { id=item.ProfileId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProfileId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProfileId })*@
+        </td>
+    </tr>
+}
+
+</table>

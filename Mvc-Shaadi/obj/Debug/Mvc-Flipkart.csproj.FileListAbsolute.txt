@@ -1,0 +1,7 @@
+c:\users\zia\documents\visual studio 2010\Projects\Mvc-Flipkart\Mvc-Flipkart\bin\EntityFramework.dll
+c:\users\zia\documents\visual studio 2010\Projects\Mvc-Flipkart\Mvc-Flipkart\bin\EntityFramework.xml
+c:\users\zia\documents\visual studio 2010\Projects\Mvc-Flipkart\Mvc-Flipkart\obj\Debug\ResolveAssemblyReference.cache
+c:\users\zia\documents\visual studio 2010\Projects\Mvc-Flipkart\Mvc-Flipkart\bin\MvcShaadi.dll
+c:\users\zia\documents\visual studio 2010\Projects\Mvc-Flipkart\Mvc-Flipkart\bin\MvcShaadi.pdb
+c:\users\zia\documents\visual studio 2010\Projects\Mvc-Flipkart\Mvc-Flipkart\obj\Debug\MvcShaadi.dll
+c:\users\zia\documents\visual studio 2010\Projects\Mvc-Flipkart\Mvc-Flipkart\obj\Debug\MvcShaadi.pdb
